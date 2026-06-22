@@ -118,7 +118,7 @@ with tab_explore:
     st.subheader("Amostra dos dados filtrados")
     st.dataframe(
         filtered[["date", "home_team", "away_team", "home_score", "away_score",
-                  "tournament", "outcome"]].sort_values("date", ascending=False).head(200),
+                  "tournament", "outcome"]].sort_values("date", ascending=False),
         width='stretch',
     )
 
@@ -137,7 +137,7 @@ with tab_predict:
     if len(upcoming) > 0:
         use_upcoming = st.checkbox(
             f"Usar um dos {len(upcoming)} jogos reais ainda nao disputados da Copa do Mundo 2026",
-            value=True,
+            value=False,
         )
 
     if use_upcoming and len(upcoming) > 0:
